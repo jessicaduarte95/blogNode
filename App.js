@@ -5,7 +5,7 @@ const handlebars = require('express-handlebars')
 const bodyParser = require('body-parser')
 const app = express()
 const admin = require('./Routes/Admin')
-const path = require('path') // Sever para manipular pastas, trabalhar com diretótios.
+const path = require('path') // Serve para manipular pastas, trabalhar com diretótios.
 const mongoose = require('mongoose')
 const session = require('express-session')
 const flash = require('connect-flash')
@@ -13,6 +13,7 @@ require("./Models/Postagem")
 const Postagem = mongoose.model("postagens")
 require("./Models/Categoria")
 const Categoria = mongoose.model("categorias")
+const usuarios = require("./Routes/Usuario")
 
 // Configurações
 
@@ -120,6 +121,7 @@ const Categoria = mongoose.model("categorias")
     })
 
     app.use('/admin', admin)
+    app.use('/usuarios', usuarios)
 
 // Outros
 const PORT = 8081
