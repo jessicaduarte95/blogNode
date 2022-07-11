@@ -10,6 +10,11 @@
         quer usar o arquivo Navbar. Como o Navbar vem
         antes do body, ele estará em todas as páginas.-->
         <div class="container mt-4"> 
+            {{#if error}}
+                <div class="alert alert-danger">{{error}}</div>
+            {{else}}
+
+            {{/if}}
             <!-- mt-4 serve para dar espaço de quetro unidades do topo.-->
             {{>_msg}}
             {{{body}}}
